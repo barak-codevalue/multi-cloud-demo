@@ -1,9 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { BabyDto } from 'src/dtos/baby.dto';
-import { v4 as uuidv4 } from 'uuid';
 import { DocumentClient } from 'aws-sdk/clients/dynamodb';
-import * as AWS from 'aws-sdk';
-AWS.config.update({ region: 'us-east-2' });
+import { createUuid } from 'src/core/utils/uuid';
 
 @Injectable()
 export class BabyRepository {
@@ -12,7 +10,7 @@ export class BabyRepository {
   });
 
   async produceBaby(baby: BabyDto): Promise<BabyDto> {
-    const babyDoc = { id: uuidv4(), ...baby };
+    const babyDoc = { id: createUuid(), ...baby };
     await this.client
       .put({
         TableName: 'Babies',

@@ -7,7 +7,7 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Post()
-  async produceBaby(@Body() babyParam: BabyDto): Promise<any> {
-    return await this.appService.produceBaby(babyParam.name);
+  async produceBaby(@Body() baby: BabyDto): Promise<any> {
+    return await this.appService.produceBaby(baby);
   }
 }

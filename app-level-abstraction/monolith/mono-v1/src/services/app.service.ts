@@ -5,7 +5,7 @@ import { BabyRepository } from 'src/repositories/baby.repository';
 @Injectable()
 export class AppService {
   constructor(private readonly babyRepository: BabyRepository) {}
-  async produceBaby(name: string): Promise<BabyDto> {
-    return await this.babyRepository.produceBaby(name);
+  async produceBaby(baby: BabyDto): Promise<BabyDto> {
+    return await this.babyRepository.produceBaby(baby);
   }
 }

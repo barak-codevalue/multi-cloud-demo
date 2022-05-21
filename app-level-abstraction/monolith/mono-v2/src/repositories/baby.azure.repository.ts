@@ -9,10 +9,10 @@ export class BabyAzureRepository implements Repository<BabyDto> {
   private readonly database = {
     id: 'archnext',
   };
-
   private readonly container = {
     id: 'Babies',
   };
+
   client = new CosmosClient({
     endpoint: process.env.ENDPOINT,
     key: process.env.KEY,

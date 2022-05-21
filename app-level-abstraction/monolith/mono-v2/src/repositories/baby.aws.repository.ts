@@ -2,9 +2,10 @@ import { Injectable } from '@nestjs/common';
 import { BabyDto } from 'src/dtos/baby.dto';
 import { DocumentClient } from 'aws-sdk/clients/dynamodb';
 import { createUuid } from 'src/core/utils/uuid';
+import { Repository } from './interfaces';
 
 @Injectable()
-export class BabyRepository {
+export class BabyAwsRepository implements Repository<BabyDto> {
   client = new DocumentClient({
     apiVersion: '2012-08-10',
   });
@@ -17,6 +18,7 @@ export class BabyRepository {
         Item: babyDoc,
       })
       .promise();
+
     return babyDoc;
   }
 }

@@ -9,7 +9,7 @@ export class BabyRepository {
     apiVersion: '2012-08-10',
   });
 
-  async produceBaby(baby: BabyDto): Promise<BabyDto> {
+  async create(baby: BabyDto): Promise<BabyDto> {
     const babyDoc = { id: createUuid(), ...baby };
     await this.client
       .put({

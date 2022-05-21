@@ -6,6 +6,6 @@ import { BabyRepository } from 'src/repositories/baby.repository';
 export class AppService {
   constructor(private readonly babyRepository: BabyRepository) {}
   async produceBaby(baby: BabyDto): Promise<BabyDto> {
-    return await this.babyRepository.produceBaby(baby);
+    return await this.babyRepository.create(baby);
   }
 }

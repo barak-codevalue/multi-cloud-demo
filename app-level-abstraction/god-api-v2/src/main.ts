@@ -1,10 +1,8 @@
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
-import * as AWS from 'aws-sdk';
 
 async function bootstrap() {
-  AWS.config.update({ region: 'us-east-2' });
   const app = await NestFactory.create(AppModule);
 
   const config = new DocumentBuilder()

@@ -2,8 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { PrayDto } from 'src/dtos/pray.dto';
 import { DaprClient } from 'dapr-client';
 
-const DAPR_HOST = process.env.THIRD_PARTY_DAPR_HOST;
-const DAPR_Port = process.env.THIRD_PARTY_DAPR_Port;
+const DAPR_HOST = process.env.CLIENT_DAPR_HOST;
+const DAPR_Port = process.env.CLIENT_DAPR_Port;
 
 @Injectable()
 export class PrayBroker {

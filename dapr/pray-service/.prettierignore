@@ -1,0 +1,6 @@
+# Add files here to ignore them from prettier formatting
+
+/dist
+/coverage
+package-lock.json
+tools/generators/gen-func-app/files/__APPS_DIR__/__packagePath__/local.settings.json

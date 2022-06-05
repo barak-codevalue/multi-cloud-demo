@@ -1,0 +1,30 @@
+{
+  "name": "load-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "start:dev": "nodemon",
+    "start:dapr-aws": "dapr run --app-port 5001 --app-id pray-service --app-protocol http --dapr-http-port 3501 --components-path ../components/aws/ -- npm run start:dev",
+    "start:dapr-azure": "dapr run --app-port 5001 --app-id pray-service --app-protocol http --dapr-http-port 3501 --components-path ../components/azure/ -- npm run start:dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^17.0.10",
+    "@types/uuid": "^8.3.4",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.4.0",
+    "tslint": "^6.1.3",
+    "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "dapr-client": "^2.2.1",
+    "dotenv": "^16.0.1",
+    "minimist": "^1.2.5",
+    "uuid": "^8.3.2"
+  }
+}

@@ -2,7 +2,9 @@ import { Injectable } from '@nestjs/common';
 import { PrayDto } from 'src/dtos/pray.dto';
 import { DocumentClient } from 'aws-sdk/clients/dynamodb';
 import { createUuid } from 'src/core/utils/uuid';
+import * as AWS from 'aws-sdk';
 
+AWS.config.update({ region: 'us-east-2' });
 @Injectable()
 export class PrayRepository {
   client = new DocumentClient({

@@ -9,7 +9,7 @@
     "prebuild": "rimraf dist",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "start": "nest start",
+    "start": "set PORT=3003 && nest start",
     "start:dapr-aws": "dapr run --app-id god-api --app-protocol http --components-path ../components/aws/ -- npm run start",
     "start:dapr-azure": "dapr run --app-id god-api --app-protocol http --components-path ../components/azure/ -- npm run start",
     "start:dev": "nest start --watch",

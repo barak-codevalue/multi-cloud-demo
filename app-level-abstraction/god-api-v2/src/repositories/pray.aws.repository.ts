@@ -4,6 +4,7 @@ import { createUuid } from 'src/core/utils/uuid';
 import { PrayDto } from 'src/dtos/pray.dto';
 import { Repository } from './interfaces';
 import * as AWS from 'aws-sdk';
+
 AWS.config.update({ region: 'us-east-2' });
 
 @Injectable()
